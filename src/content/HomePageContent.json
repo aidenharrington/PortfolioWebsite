@@ -1,3 +1,31 @@
 {
-    
+    "welcomeSection": {
+        "name": "Aiden Harrington",
+        "greeting": "Welcome!"
+    },
+    "introSection": "Hi there! I’m Aiden Harrington. After graduating from UBC with a Bachelor’s of Science in Computer Science, I remain based in Vancouver where I balance my love for software development with my hobbies like hockey (Go Canucks!), reading, gaming, and road biking! <Please change me> Whether its hitting a new long distance on the bike or learning a new technology, I am very passionate about learning and growth.",
+    "professionalJourneySection": {
+        "title": "Professional Journey",
+        "paypalSubSection": {
+            "title": "PayPal (Software Engineer 1 -> Software Engineer 2)",
+            "date": "May 2022 - March 2024",
+            "paragraph1": "At PayPal, I was part of a backend onboarding team that primarily worked on our Java Spring Boot API entrypoint for our large partners to onboard their merchant accounts. While working on this team, we reduced partner onboarding time by 75% and cut merchant onboarding by over 50%. I also had the privilege of stepping into several mentorship and leadership roles. The most rewarding of these experiences was guiding our intern through his first ever internship and working with him to deliver a completed project by the end of his term.",
+            "paragraph2": "One of my first large solo projects was revamping a Spring Batch daemon. When I inherited the project, it lacked documentation and was essentially a proof of concept built as part of an internship project. In order to get the project to production ready status, I refactored a large part of the logic so that the daemon could seamlessly switch between several jobs (and remain open for future use-cases) as well as implement a retry and error logging mechanism. On its first production run, the daemon processed over 100,000 accounts without any outstanding errors after the retry mechanism and completed the job in under 20% of the expected time. I also created comprehensive documentation for the application as well as full run instructions for each of the jobs. To ensure seamless adoption across our North American and China teams, I hosted several demo and Q&A sessions so that everyone on the team could use and develop within the application.",
+            "paragraph3": "Another highlight at PayPal was leading the implementation (for the onboarding team) of a webhook-based alert mechanism in collaboration with multiple teams. This feature was requested by a key partner to enhance client communication during onboarding and faced a lot of internal and external pressure. To deliver the feature within tight timelines, I worked with our architect and product managers to build the product technical requirements as well as 3 other teams across as many countries. While we had to overcome many hurdles, we were able to deliver the feature by the deadline."
+        },
+        "knoldusSubSection": {
+            "title": "Knoldus (Internship/Co-op)",
+            "date": "May 2021 - Aug 2021",
+            "paragraph1": "During my time at Knoldus, I primarily worked on an internal employee leaderboard and rewards page that consisted of an Angular front-end, Scala backend and PostgreSQL database. One of my first contributions was refactoring the database migration scripts and automating the process using Flyway.",
+            "paragraph2": "My largest project was building a page to display a team-based leaderboard (to add to the existing individual employee leaderboard). To do this I worked with our project manager and design team to create the technical specifications and visual design. Since employee’s teams were not currently tracked, I added and altered several database tables to represent the team entity and its relationships, created additional API endpoints and flows, as well as building a new frontend page and displaying the data retrieved from the new endpoints.",
+            "paragraph3": "The leaderboard application not only streamlined the rewards tracking process within the team, but also was proposed as a marketable SaaS for other businesses’ internal employee tracking.",
+            "paragraph4": "Beyond coding, I mentored junior interns, conducted code reviews, and presented team updates—including Spring-related developments—to both the manager and CEO."
+        },
+        "mitacsSubsSection": {
+            "title": "Mitacs (Internship/Co-op)",
+            "date": "Sep 2019 - Aug 2020",
+            "paragraph1": "My first internship was with Mitacs, where I contributed to their Research and Applications Portal (RAP). Working in a small, dynamic team, I handled UI updates, database modifications, building API endpoints, and logic refinements across both front and backend applications.",
+            "paragraph2": "A key achievement was building a scheduled daemon that synchronized data across various company systems, including Azure Cloud, SharePoint, and a MySQL database. The daemon ensured consistent and accurate data flow by identifying discrepancies, updating records, and automating a previously manual and tedious process."
+        }
+    }
 }
