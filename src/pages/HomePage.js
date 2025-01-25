@@ -1,103 +1,66 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import content from "../content/HomePageContent.json"
+import content from "../content/HomePageContent.json";
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 const HomePage = () => {
   const chunks = [
     // Welcome Section: Image on the left and text on the right
-    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", scrollSnapAlign: "start", gap: 4 }}>
-      <Typography variant="h4">
-        {content.welcomeSection.name}
-        </Typography>
-      <Typography variant="h2" sx={{  marginTop: 2, marginLeft: "25%", transform: "translateX(-25%)" }}>
+    <div className="d-flex flex-column justify-content-center align-items-center vh-100 scroll-snap-start gap-4">
+      <h4>{content.welcomeSection.name}</h4>
+      <h2 className="mt-2" style={{ marginLeft: "25%", transform: "translateX(-25%)" }}>
         {content.welcomeSection.greeting}
-        </Typography>
-    </Box>,
+      </h2>
+    </div>,
 
     // Intro Section: Text on the left, image on the right
-    <Box sx={{ display: "flex", justifyContent: "space-between", height: "100vh", scrollSnapAlign: "start" }}>
-      <Box>
-        <Typography>
-          {content.introSection}
-        </Typography>
-        
-      </Box>
-      <Box component="img" src="" alt="Placeholder" sx={{ width: "50%" }} />
-    </Box>,
+    <div className="d-flex justify-content-between vh-100 scroll-snap-start">
+      <div>
+        <p>{content.introSection}</p>
+      </div>
+      <Image src="" alt="Placeholder" fluid style={{ width: "50%" }} />
+    </div>,
 
     // Professional Journey: PayPal Part 1
-    <Box sx={{ textAlign: "left", height: "100vh", scrollSnapAlign: "start" }}>
-      <Typography variant="h2">
-        {content.professionalJourneySection.title}
-      </Typography>
-      <Typography sx={{ fontWeight: "bold" }}>
-        {content.professionalJourneySection.paypalSubSection.title}
-      </Typography>
-      <Typography sx={{ fontStyle: "italic" }}>
-        {content.professionalJourneySection.paypalSubSection.date}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.paypalSubSection.paragraph1}
-      </Typography>
-    </Box>,
+    <div className="text-start vh-100 scroll-snap-start">
+      <h2>{content.professionalJourneySection.title}</h2>
+      <h5 className="font-weight-bold">{content.professionalJourneySection.paypalSubSection.title}</h5>
+      <h6 className="font-italic">{content.professionalJourneySection.paypalSubSection.date}</h6>
+      <p>{content.professionalJourneySection.paypalSubSection.paragraph1}</p>
+    </div>,
 
     // Professional Journey: PayPal Part 2
-    <Box sx={{ textAlign: "left", height: "100vh", scrollSnapAlign: "start" }}>
-      <Typography>
-        {content.professionalJourneySection.paypalSubSection.paragraph2}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.paypalSubSection.paragraph3}
-      </Typography>
-    </Box>,
+    <div className="text-start vh-100 scroll-snap-start">
+      <p>{content.professionalJourneySection.paypalSubSection.paragraph2}</p>
+      <p>{content.professionalJourneySection.paypalSubSection.paragraph3}</p>
+    </div>,
 
     // Professional Journey: Knoldus
-    <Box sx={{ textAlign: "left", height: "100vh", scrollSnapAlign: "start" }}>
-      <Typography sx={{ fontWeight: "bold" }}>
-        {content.professionalJourneySection.knoldusSubSection.title}
-      </Typography>
-      <Typography sx={{ fontStyle: "italic" }}>
-        {content.professionalJourneySection.knoldusSubSection.date}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.knoldusSubSection.paragraph1}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.knoldusSubSection.paragraph2}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.knoldusSubSection.paragraph3}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.knoldusSubSection.paragraph4}
-      </Typography>
-    </Box>,
+    <div className="text-start vh-100 scroll-snap-start">
+      <h5 className="font-weight-bold">{content.professionalJourneySection.knoldusSubSection.title}</h5>
+      <h6 className="font-italic">{content.professionalJourneySection.knoldusSubSection.date}</h6>
+      <p>{content.professionalJourneySection.knoldusSubSection.paragraph1}</p>
+      <p>{content.professionalJourneySection.knoldusSubSection.paragraph2}</p>
+      <p>{content.professionalJourneySection.knoldusSubSection.paragraph3}</p>
+      <p>{content.professionalJourneySection.knoldusSubSection.paragraph4}</p>
+    </div>,
 
     // Professional Journey: Mitacs
-    <Box sx={{ textAlign: "left", height: "100vh", scrollSnapAlign: "start" }}>
-       <Typography sx={{ fontWeight: "bold" }}>
-        {content.professionalJourneySection.mitacsSubsSection.title}
-      </Typography>
-      <Typography sx={{ fontStyle: "italic" }}>
-        {content.professionalJourneySection.mitacsSubsSection.date}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.mitacsSubsSection.paragraph1}
-      </Typography>
-      <Typography>
-        {content.professionalJourneySection.mitacsSubsSection.paragraph2}
-      </Typography>
-    </Box>
+    <div className="text-start vh-100 scroll-snap-start">
+      <h5 className="font-weight-bold">{content.professionalJourneySection.mitacsSubsSection.title}</h5>
+      <h6 className="font-italic">{content.professionalJourneySection.mitacsSubsSection.date}</h6>
+      <p>{content.professionalJourneySection.mitacsSubsSection.paragraph1}</p>
+      <p>{content.professionalJourneySection.mitacsSubsSection.paragraph2}</p>
+    </div>
   ];
 
   return (
-    <Box sx={{ overflowY: "scroll", scrollSnapType: "y mandatory", height: "100vh" }}>
+    <div className="overflow-scroll" style={{ scrollSnapType: "y mandatory", height: "100vh" }}>
       {chunks.map((chunk, index) => (
-        <Box key={index} sx={{ scrollSnapAlign: "start" }}>
+        <div key={index} className="scroll-snap-start">
           {chunk}
-        </Box>
+        </div>
       ))}
-    </Box>
+    </div>
   );
 };
 

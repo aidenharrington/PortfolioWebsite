@@ -1,22 +1,23 @@
 import React from "react";
-import { Box, Typography, Link } from "@mui/material";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import content from "../content/ResumePageContent.json"
+import content from "../content/ResumePageContent.json";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const ResumePage = () => {
   return (
-    <Box sx={{ padding: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        {content.title}
-      </Typography>
-      <Typography variant="body1" paragraph>
-        {content.description}
-      </Typography>
-      <Link href="#" target="_blank" sx={{ display: "flex", alignItems: "center" }}>
-        <PictureAsPdfIcon sx={{ marginRight: 1 }} />
+    <div className="container py-4">
+      <h4 className="mb-4">{content.title}</h4>
+      <p className="mb-4">{content.description}</p>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="d-flex align-items-center text-decoration-none"
+      >
+        <i className="bi bi-file-earmark-pdf me-2"></i>
         {content.downloadResumeLinkText}
-      </Link>
-    </Box>
+      </a>
+    </div>
   );
 };
 

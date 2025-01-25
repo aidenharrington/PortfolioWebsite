@@ -1,34 +1,29 @@
 import React from "react";
-import { Box, Typography, Link } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import content from '../content/ProjectsPageContent.json'
+import content from '../content/ProjectsPageContent.json';
+import commonContent from '../content/CommonContent.json'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const ProjectsPage = () => {
   return (
-    <Box sx={{ padding: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        {content.title}
-      </Typography>
-      <Link href="https://github.com/aidenharrington/subscribr-application" target="_blank" sx={{ display: "flex", alignItems: "center" }}>
+    <div className="container py-4">
+      <h4 className="mb-4">{content.title}</h4>
+      <a
+        href={commonContent.subscribrGitHubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="d-flex align-items-center text-decoration-none"
+      >
         {content.github}
-        <GitHubIcon sx={{ marginLeft: 1 }} />
-      </Link>
-      <Typography sx={{ paddingTop: 4 }}>
-        {content.introParagraph}
-      </Typography>
-      <Typography sx={{ paddingTop: 4 }}>
-        {content.bodyParagraph1}
-      </Typography>
-      <Typography sx={{ paddingTop: 4 }}>
-        {content.bodyParagraph2}
-      </Typography>
-      <Typography sx={{ paddingTop: 4 }}>
-        {content.bodyParagraph3}
-      </Typography>
-      <Typography sx={{ paddingTop: 4 }}>
-        {content.conclusion}
-      </Typography>
-    </Box>
-)};
+        <i className="bi bi-github ms-2"></i>
+      </a>
+      <p className="mt-4">{content.introParagraph}</p>
+      <p className="mt-4">{content.bodyParagraph1}</p>
+      <p className="mt-4">{content.bodyParagraph2}</p>
+      <p className="mt-4">{content.bodyParagraph3}</p>
+      <p className="mt-4">{content.conclusion}</p>
+    </div>
+  )
+};
 
 export default ProjectsPage;
