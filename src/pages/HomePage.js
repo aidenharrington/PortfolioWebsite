@@ -1,9 +1,11 @@
 import React from "react";
 import content from "../content/HomePageContent.json";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import WelcomeBanner from "../components/WelcomeBanner";
 
 const HomePage = () => {
   const chunks = [
+
     // Welcome Section: Image on the left and text on the right
     <div className="d-flex flex-column justify-content-center align-items-center vh-100 scroll-snap-start gap-4">
       <h4>{content.welcomeSection.name}</h4>
@@ -55,6 +57,9 @@ const HomePage = () => {
 
   return (
     <div className="overflow-scroll" style={{ scrollSnapType: "y mandatory", height: "100vh" }}>
+      
+      <WelcomeBanner />
+
       {chunks.map((chunk, index) => (
         <div key={index} className="scroll-snap-start">
           {chunk}
