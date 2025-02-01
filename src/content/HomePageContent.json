@@ -1,7 +1,7 @@
 {
     "welcomeSection": {
-        "name": "Aiden Harrington",
-        "greeting": "Welcome!"
+        "introduction": "Hi! I'm Aiden",
+        "welcome": "Welcome to my Portfolio"
     },
     "introSection": "Hi there! I’m Aiden Harrington. After graduating from UBC with a Bachelor’s of Science in Computer Science, I remain based in Vancouver where I balance my love for software development with my hobbies like hockey (Go Canucks!), reading, gaming, and road biking! <Please change me> Whether its hitting a new long distance on the bike or learning a new technology, I am very passionate about learning and growth.",
     "professionalJourneySection": {

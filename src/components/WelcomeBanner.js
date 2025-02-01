@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import profileImg from "../assets/images/profile_pic.png";
+import content from "../content/HomePageContent.json"
 import '../App.css';
 
 const WelcomeBanner = () => {
-    const staticWelcomeText = "Welcome to my Portfolio";
-    const dynamicWelcomeText = "Hi! I'm Aiden";
+    const staticWelcomeText = content.welcomeSection.welcome;
+    const dynamicWelcomeText = content.welcomeSection.introduction;
 
     const preDeleteDelay = 1000;
     const typeSpeed = 250;
@@ -16,6 +17,8 @@ const WelcomeBanner = () => {
     const [text, setText] = useState('');
     const [index, setIndex] = useState(0);
     const [speed, setSpeed] = useState(150);
+    const [isVisible, setIsVisible] = useState(false);
+    const containerRef = useRef(null);
 
     useEffect(() => {
         const handleTyping = () => {
@@ -39,9 +42,33 @@ const WelcomeBanner = () => {
         return () => clearTimeout(timer);
     }, [text, isDeleting, speed, index, dynamicWelcomeText]);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    setText("");
+                    setIsDeleting(false);
+                } else {
+                    setIsVisible(false);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        const currentElement = containerRef.current;
+        if (currentElement) {
+            observer.observe(currentElement);
+        }
+
+        return () => {
+            if (currentElement) observer.unobserve(currentElement);
+        };
+    }, [])
+
     return (
         <section className="banner" id="home">
-            <Container>
+            <Container ref={containerRef}>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <div>
@@ -56,8 +83,12 @@ const WelcomeBanner = () => {
                         </div>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <div>
-                            <img src={profileImg} />
+                        <div className="profile-img-container">
+                            <img
+                                src={profileImg}
+                                alt="Profile Picture"
+                                className="profile-img"
+                            />
                         </div>
                     </Col>
                 </Row>
