@@ -36,6 +36,14 @@ body {
   background-color: #121212 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
+
+  margin: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  background-image: url('./assets/images/space_background.jpg');
+  background-size: cover;
+  background-repeat: repeat-y; 
+  background-attachment: fixed;
 }
 
 h1,
@@ -276,82 +284,49 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
 
-/************ Banner Css ************/
-.banner {
-  margin-top: 0;
-  padding: 260px 0 100px 0;
-  /* Todo - add */
-  /* background-image: url('./assets/img/banner-bg.png'); */
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.banner .tagline {
+/* .banner .tagline {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-bottom: 16px;
-  display: inline-block;
-}
-
-.banner h1 {
-  font-size: 65px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  margin-bottom: 20px;
   display: block;
+} */
+
+/************ Home Page Css ************/
+.home-page-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
-.banner p {
-  color: #B8B8B8;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  width: 96%;
-}
-
-.banner button {
-  color: #fff;
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 60px;
-  letter-spacing: 0.8px;
+.chunk {
+  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.banner button svg {
-  font-size: 25px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-
-.banner button:hover svg {
-  margin-left: 25px;
-}
-
-.banner img {
-  animation: updown 3s linear infinite;
-}
-
-.banner .profile-img-container {
-  width: 300px;
-  height: 300px;
+.profile-img-container {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #000;
+  flex-shrink: 0; /* Prevent resizing */
 }
 
-.banner .profile-img {
+.profile-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
+  image-rendering: crisp-edges;
 }
 
 .txt-rotate>.wrap {
