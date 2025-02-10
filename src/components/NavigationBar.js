@@ -5,7 +5,7 @@ import commonContent from "../content/CommonContent.json";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../App.css';
 
-const NavBar = () => {
+const NavigationBar = () => {
   const homePage = 'home';
   const projectsPage = 'projects';
   const resumePage = 'resume';
@@ -85,4 +85,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavigationBar;

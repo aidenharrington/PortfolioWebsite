@@ -150,7 +150,6 @@ span.navbar-text {
   width: 42px;
   height: 42px;
   background-color: #333;
-  /* Black circle background */
   display: inline-flex;
   border-radius: 50%;
   margin-right: 12px;
@@ -158,30 +157,24 @@ span.navbar-text {
   justify-content: center;
   line-height: 1;
   border: 1px solid #fff;
-  /* White border */
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .social-icon a:hover {
   background-color: #fff;
-  /* White background on hover */
   border-color: #333;
-  /* Dark border on hover */
 }
 
 .social-icon a i {
   font-size: 20px;
   color: white;
-  /* White icon initially */
   transition: color 0.3s ease-in-out;
 }
 
 .social-icon a:hover i {
   color: #333;
-  /* Black icon on hover */
 }
 
-/* Optional: If using icons as img instead of <i>, use this for the img styling */
 .social-icon a img {
   width: 40%;
   z-index: 1;
@@ -319,7 +312,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0; /* Prevent resizing */
+  flex-shrink: 0; 
 }
 
 .profile-img {
@@ -327,6 +320,35 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 100%;
   object-fit: cover;
   image-rendering: crisp-edges;
+}
+
+.welcome-text-box {
+  background: rgba(64, 64, 64, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  min-height: "50px";
+  display: "flex";
+  flex-direction: "column";
+  justify-content: "center";
+}
+
+.home-page-text-box {
+  background: rgba(64, 64, 64, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.large-text {
+  font-size: 20px;
 }
 
 .txt-rotate>.wrap {

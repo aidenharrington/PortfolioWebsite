@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import NavigationBar from "./components/NavigationBar";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
-      <NavBar />
+      <NavigationBar />
       <Routes>
         <Route path={commonContent.homePageLink} element={<HomePage />} />
         <Route path={commonContent.projectsPageLink} element={<ProjectsPage />} />

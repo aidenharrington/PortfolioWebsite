@@ -15,8 +15,8 @@ const HomePage = () => {
       </div>
 
       <div className="chunk">
-        <div>
-          <p>{content.introSection}</p>
+        <div className="home-page-text-box">
+          <p className="large-text">{content.introSection}</p>
         </div>
       </div>
 
