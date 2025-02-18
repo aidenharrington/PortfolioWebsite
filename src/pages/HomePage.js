@@ -10,7 +10,7 @@ import '../App.css';
 const HomePage = () => {
 
   return (
-    <div className="home-page-container">
+    <div className="snap-scroll-container">
 
       <div className="chunk">
         <WelcomeBanner />

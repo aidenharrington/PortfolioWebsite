@@ -6,8 +6,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const ResumePage = () => {
   return (
     <div className="container py-4">
-      <h4 className="mb-4">{content.title}</h4>
-      <p className="mb-4">{content.description}</p>
+      <h4>{content.title}</h4>
+      <p>{content.description}</p>
       <a
         href="#"
         target="_blank"

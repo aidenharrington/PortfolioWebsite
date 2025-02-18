@@ -289,10 +289,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 } */
 
 /************ Home Page Css ************/
-.home-page-container {
+.snap-scroll-container {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .chunk {
@@ -308,6 +309,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+}
+
+.chunk-projects {
+  justify-content: flex-start !important;
+}
+
+.chunk-title {
+  margin-top: 40px;
 }
 
 .profile-img-container {
@@ -407,11 +416,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 40px; 
   color: #6E6E6E; 
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0; /* Keeps arrow hidden initially */
+  opacity: 0;
 }
 
 .scroll-prompt.bounce {
-  opacity: 1; /* Shows arrow when bouncing */
+  opacity: 1;
   animation: bounce 2s infinite;
 }
 
@@ -425,6 +434,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   100% {
     transform: translateY(0);
   }
+}
+
+.video-container {
+  position: relative;
+  width: 100%; 
+  padding-top: 56.25%; 
+  background-color: #000; 
+  margin-top: 0px; 
+  margin-bottom: 1rem; 
+  border-radius: 8px;
+  overflow: hidden;
+  transform: scale(0.75); 
+  transform-origin: center center;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
