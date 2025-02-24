@@ -11,20 +11,23 @@ const ProjectsPage = () => {
 
   return (
     <div className="snap-scroll-container">
-      <div className="chunk chunk-projects">
-        <h4 className="chunk-title">{content.title}</h4>
-        <a
-          href={commonContent.subscribrGitHubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="d-flex align-items-center text-decoration-none"
-        >
-          {content.github}
-          <i className="bi bi-github ms-2"></i>
-        </a>
-        <p>{content.introParagraph}</p>
 
-        <div className="video-container mb-4">
+      <div className="chunk chunk-first">
+        <h1 className="page-title">{content.title}</h1>
+        <a
+            href={commonContent.subscribrGitHubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="d-flex align-items-center text-decoration-none"
+          >
+            {content.github}
+            <i className="bi bi-github ms-2"></i>
+          </a>
+        <div className="home-page-text-box">
+          <p>{content.introParagraph}</p>
+        </div>
+
+        <div className="video-container">
           <iframe
             src={`https://www.youtube.com/embed/${subscribrVideoId}`}
             title="YouTube video player"

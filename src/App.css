@@ -311,12 +311,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 
-.chunk-projects {
+.chunk-first {
   justify-content: flex-start !important;
-}
-
-.chunk-title {
-  margin-top: 40px;
 }
 
 .profile-img-container {
@@ -352,12 +348,23 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 20px;
   border-radius: 8px;
   color: white;
-  min-height: 50px;
+  height: auto;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 75vw;
   margin: 0 auto;
+}
+
+.chunk-first .home-page-text-box {
+  margin-top: 10px;
+  margin-bottom: 40px !important;
+}
+
+.page-title {
+  margin-top: 80px;
 }
 
 .large-text {
@@ -439,14 +446,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .video-container {
   position: relative;
   width: 100%; 
-  padding-top: 56.25%; 
+  max-width: 560px;
+  height: 315px;
   background-color: #000; 
   margin-top: 0px; 
   margin-bottom: 1rem; 
   border-radius: 8px;
   overflow: hidden;
-  transform: scale(0.75); 
-  transform-origin: center center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .video-container iframe {
