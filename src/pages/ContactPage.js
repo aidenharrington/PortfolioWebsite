@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import emailjs from 'emailjs-com';
+import DOMPurify from 'dompurify';
 import content from "../content/ContactPageContent.json";
 import commonContent from "../content/CommonContent.json"
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,13 +15,58 @@ const ContactPage = () => {
     honeypot: "",
   });
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = (e) => {
+  
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (form.honeypot) return; // Prevent bot submissions
-    // Simulate sending email
-    console.log("Email sent to default@example.com:", form);
+    setStatus('Sending...');
+
+    const emailJsKey=process.env.REACT_APP_EMAILJS_KEY
+    const serviceId = process.env.REACT_APP_SERVICE_ID;
+    const autoReplyTemplate = process.env.REACT_APP_AUTO_REPLY_TEMPLATE;
+    const userEmailTemplate = process.env.REACT_APP_USER_EMAIL_TEMPLATE;
+
+    console.log(autoReplyTemplate)
+
+    try {
+      const autoReplyParams = {
+        name: DOMPurify.sanitize(form.name),
+        email: DOMPurify.sanitize(form.email),
+        subject: DOMPurify.sanitize(form.subject)
+      };
+
+      console.log("Sending auto reply email...")
+      emailjs.init(emailJsKey)
+      await emailjs.send(serviceId, autoReplyTemplate, autoReplyParams);
+
+      const userEmailParams = {
+        name: DOMPurify.sanitize(form.name),
+        email: DOMPurify.sanitize(form.email),
+        subject: DOMPurify.sanitize(form.subject),
+        message: DOMPurify.sanitize(form.message)
+      };
+
+      console.log("Sending user email...")
+      await emailjs.send(serviceId, userEmailTemplate, userEmailParams);
+
+      setStatus('Message sent successfully!');
+    } catch (error) {
+      setStatus('Failed to send message. Please try again later.')
+      // Todo: remove
+      console.error('Email send error:', error);
+    }
   };
 
   return (
