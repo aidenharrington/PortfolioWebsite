@@ -19,7 +19,11 @@ const HomePage = () => {
 
       <div className="chunk">
         <div className="home-page-text-box">
-          <p className="large-text">{content.introSection}</p>
+          <h2 className="professional-journey-title">{content.aboutMeSection.title}</h2>
+          <p>{content.aboutMeSection.paragraph1}</p>
+          <p>{content.aboutMeSection.paragraph2}</p>
+          <p>{content.aboutMeSection.paragraph3}</p>
+          <p>{content.aboutMeSection.paragraph4}</p>
         </div>
         <ScrollPrompt />
       </div>

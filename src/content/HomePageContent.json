@@ -3,7 +3,13 @@
         "introduction": "Hi! I'm Aiden",
         "welcome": "Welcome to my Portfolio"
     },
-    "introSection": "Hi there! I’m Aiden Harrington. After graduating from UBC with a Bachelor’s of Science in Computer Science, I remain based in Vancouver where I balance my love for software development with my hobbies like hockey (Go Canucks!), reading, gaming, and road biking! <Please change me> Whether its hitting a new long distance on the bike or learning a new technology, I am very passionate about learning and growth.",
+    "aboutMeSection": {
+        "title": "About Me",
+        "paragraph1": "Hi there! I’m Aiden Harrington, a software engineer based in Vancouver. After earning my Bachelor’s of Science in Computer Science at UBC, I blend my passion for software development with my love for hockey (Go Canucks!), reading, gaming, road biking, spending time with my girlfriend and hanging out with my cuddly black cat Stanley.",
+        "paragraph2": "What really excited me about software development is the problem-solving aspect. There’s something incredibly rewarding about building apps and tools that people actually use and enjoy. I’ve always been fascinated by technology, especially in the early days when software felt like magic to me. The curiosity to understand how code could create the incredible applications around me is what led me here.",
+        "paragraph3": "In my professional journey, I’ve found great fulfillment in mentoring others and leading projects that make a meaningful impact. I’ve had the opportunity to mentor several interns which has been a tremendously rewarding experience. Helping others grow and guiding them through challenges has helped me learn more about my strengths and weaknesses as well as deepening my understanding of team dynamics and the importance of clear communication. Leading projects has also been a major learning experience for me. It helped me get better at understanding the business side of software development, by immersing myself in the challenges of project planning, collaborating with different partners, and balancing the priorities of multiple teams.",
+        "paragraph4": "Whether it's hitting a new biking milestone or diving into the latest tech, I’m always looking for ways to grow and push myself further. I’m excited to keep learning, and I’d love to connect with others who share the same passion."
+    },
     "professionalJourneySection": {
         "title": "Professional Journey",
         "paypalSubSection": {
