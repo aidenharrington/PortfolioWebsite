@@ -29,7 +29,7 @@ const ProjectsPage = () => {
 
         <div className="video-container">
           <iframe
-            src={`https://www.youtube.com/embed/${subscribrVideoId}`}
+            src={`https:/www.youtube-nocookie.com/embed/${subscribrVideoId}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

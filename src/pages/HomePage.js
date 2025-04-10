@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from "react";
 import content from "../content/HomePageContent.json";
 
-import { Container, Row, Col, Image } from "react-bootstrap";
 import WelcomeBanner from "../components/WelcomeBanner";
 import ScrollPrompt from "../components/ScrollPrompt";
+
+import stanleySitting from "../assets/images/stanley_sitting.png";
 
 import '../App.css';
 
@@ -70,10 +70,34 @@ const HomePage = () => {
           <p>{content.professionalJourneySection.mitacsSubsSection.paragraph2}</p>
           <p>{content.professionalJourneySection.mitacsSubsSection.paragraph3}</p>
         </div>
+        <ScrollPrompt />
       </div>
 
-
-
+      <div className="chunk chunk-first">
+        <h1 className="page-title">{content.stanleySection.title}</h1>
+        <div
+          className="image-container"
+          style={{
+            display: 'flex',
+            justifyContent: 'center', // Center image horizontally
+            alignItems: 'center', // Center image vertically
+            width: '100%', // Ensure the container takes up the full width
+            height: '100vh', // Make container take full viewport height
+          }}
+        >
+          <img
+            src={stanleySitting}
+            alt="Stanley"
+            style={{
+              maxWidth: '600px', // 50% bigger than 300px
+              width: '100%', // Ensure the image scales within the max-width
+              height: 'auto', // Maintain aspect ratio
+              display: 'block', // Remove any unwanted inline spacing
+              margin: '0 auto', // Center the image horizontally
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import commonContent from "../content/CommonContent.json";
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -40,25 +41,29 @@ const NavigationBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link
-              href={commonContent.homePageLink}
+              as={Link}
+              to={commonContent.homePageLink}
               className={activePage === homePage ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActivePage(homePage)}>
               {commonContent.homePageTitle}
             </Nav.Link>
             <Nav.Link
-              href={commonContent.projectsPageLink}
+              as={Link}
+              to={commonContent.projectsPageLink}
               className={activePage === projectsPage ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActivePage(projectsPage)}>
               {commonContent.projectsPageTitle}
             </Nav.Link>
             <Nav.Link
-              href={commonContent.resumePageLink}
+              as={Link}
+              to={commonContent.resumePageLink}
               className={activePage === resumePage ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActivePage(resumePage)}>
               {commonContent.resumePageTitle}
             </Nav.Link>
             <Nav.Link
-              href={commonContent.contactPageLink}
+              as={Link}
+              to={commonContent.contactPageLink}
               className={activePage === contactPage ? 'active navbar-link' : 'navbar-link'}
               onClick={() => onUpdateActivePage(contactPage)}>
               {commonContent.contactPageTitle}

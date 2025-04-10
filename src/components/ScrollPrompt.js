@@ -30,7 +30,7 @@ const ScrollPrompt = () => {
 
     return (
         <div className={`scroll-prompt ${showBounce ? 'bounce' : ''}`}>
-            <i class="bi bi-arrow-bar-down"></i>
+            <i className="bi bi-arrow-bar-down"></i>
         </div>
     );
 };

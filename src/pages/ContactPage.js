@@ -160,9 +160,6 @@ const ContactPage = () => {
             onChange={handleChange}
             style={{ display: "none" }}
           />
-          {/* <button type="submit" className="btn btn-primary mt-3">
-            {content.submitButtonText}ß
-          </button> */}
           <button type="submit" className="btn btn-primary mt-3" disabled={isLoading}>
             {isLoading ? 'Sending...' : 'Send Message'}
           </button>

@@ -4,6 +4,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Block React Router logs in both development and production
+const suppressAllReactRouterLogs = () => {
+  const originalError = console.error;
+  const originalWarn = console.warn;
+
+  // Override console.error to suppress React Router related logs
+  console.error = (...args) => {
+    // Prevent any React Router logs from being shown
+    if (args[0] && args[0].includes("React Router")) {
+      return; 
+    }
+    originalError(...args);
+  };
+
+  // Override console.warn to suppress React Router related warnings
+  console.warn = (...args) => {
+    // Prevent React Router warnings from being shown
+    if (args[0] && args[0].includes("React Router")) {
+      return; 
+    }
+    originalWarn(...args);
+  };
+};
+
+suppressAllReactRouterLogs();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
