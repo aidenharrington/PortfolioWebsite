@@ -56,6 +56,7 @@ const HomePage = () => {
           <p>{content.professionalJourneySection.knoldusSubSection.paragraph1}</p>
           <p>{content.professionalJourneySection.knoldusSubSection.paragraph2}</p>
           <p>{content.professionalJourneySection.knoldusSubSection.paragraph3}</p>
+          <p>{content.professionalJourneySection.knoldusSubSection.paragraph4}</p>
         </div>
         <ScrollPrompt />
       </div>

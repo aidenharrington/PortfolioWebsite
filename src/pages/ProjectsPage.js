@@ -50,6 +50,7 @@ const ProjectsPage = () => {
         <div className="home-page-text-box">
           <p>{content.bodyParagraph3}</p>
           <p>{content.conclusionParagraph}</p>
+          <p>{content.conclusionParagraph2}</p>
         </div>
       </div>
 
