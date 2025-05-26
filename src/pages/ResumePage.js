@@ -11,13 +11,13 @@ const ResumePage = () => {
         <div className="home-page-text-box">
           <p>{content.description}</p>
           <a
-            href="#"
+            href="/files/aiden_harrington_resume_c.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="d-flex align-items-center text-decoration-none"
           >
             <i className="bi bi-file-earmark-pdf me-2"></i>
-            {content.downloadResumeLinkText}
+            {content.viewResumeLinkText}
           </a>
         </div>
       </div>

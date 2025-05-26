@@ -332,6 +332,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   image-rendering: crisp-edges;
 }
 
+
 .welcome-text-box {
   background: rgba(64, 64, 64, 0.4);
   padding: 20px;
@@ -417,11 +418,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .scroll-prompt {
   position: absolute;
-  bottom: 20px; 
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 40px; 
-  color: #6E6E6E; 
+  font-size: 40px;
+  color: #6E6E6E;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
   opacity: 0;
 }
@@ -435,9 +436,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -445,12 +448,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .video-container {
   position: relative;
-  width: 100%; 
+  width: 100%;
   max-width: 560px;
   height: 315px;
-  background-color: #000; 
-  margin-top: 0px; 
-  margin-bottom: 1rem; 
+  background-color: #000;
+  margin-top: 0px;
+  margin-bottom: 1rem;
   border-radius: 8px;
   overflow: hidden;
   margin-left: auto;
@@ -495,4 +498,165 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Mobile-friendly styling */
+@media (max-width: 768px) {
+
+  .home-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .chunk {
+    height: auto;
+    scroll-snap-align: start;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: block;
+  }
+
+  .home-page-text-box {
+    padding: 0;
+    width: 100%;
+  }
+
+  .image-container {
+    height: auto !important;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .scroll-prompt {
+    display: none;
+  }
+
+  .profile-img-container {
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .chunk-video {
+    min-height: 100vh; /* override chunk's min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 2rem 0;
+    scroll-snap-align: start;
+  }
+
+  .chunk-video .video-container {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Mobile Nav Bar (Full Screen) */
+  nav.navbar.expanded {
+    background-color: rgba(18, 18, 18, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1050;
+    padding: 0;
+    overflow-y: auto;
+  }
+
+  nav.navbar .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.95);
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+
+    /* Animation */
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  nav.navbar .navbar-collapse.collapsing {
+    height: 100vh !important;
+    overflow: hidden !important;
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+
+
+  nav.navbar.expanded .navbar-collapse {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .navbar-collapse.collapsing {
+    transition: none !important; /* prevents flicker caused by collapse transition */
+  }
+
+  .navbar-collapse.show {
+    display: block !important;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav.navbar.expanded .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.navbar.expanded .nav-link {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+
+  nav.navbar .navbar-toggler {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1100;
+  }
+
+  nav.navbar .navbar-toggler span {
+    transform-origin: right center;
+    display: block;
+  }
+
 }

@@ -70,7 +70,7 @@ const WelcomeBanner = () => {
         <div ref={containerRef} className="container mt-5">
             <div className="row align-items-center">
                 <div className="col-md-6 text-start">
-                    <div className="welcome-text-box">
+                    <div className="welcome-text-box welcome-text-mobile">
                         <h1 className="">{staticWelcomeText}</h1>
                         <h2 style={{ minHeight: "30px", visibility: text ? "visible" : "hidden" }}>{text || "\u00A0"}</h2>
                     </div>
