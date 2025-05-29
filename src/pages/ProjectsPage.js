@@ -44,7 +44,7 @@ const ProjectsPage = () => {
         </div>
         {!isMobile && (<div className="video-container">
           <iframe
-            src={`https:/www.youtube-nocookie.com/embed/${subscribrVideoId}`}
+            src={`https://www.youtube-nocookie.com/embed/${subscribrVideoId}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -57,7 +57,7 @@ const ProjectsPage = () => {
       {isMobile && (<div className="chunk chunk-video">
         <div className="video-container">
           <iframe
-            src={`https:/www.youtube-nocookie.com/embed/${subscribrVideoId}`}
+            src={`https://www.youtube-nocookie.com/embed/${subscribrVideoId}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
