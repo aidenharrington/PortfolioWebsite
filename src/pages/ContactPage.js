@@ -71,6 +71,7 @@ const ContactPage = () => {
       setStatusMessage('Message sent successfully!');
       setForm({ name: "", email: "", subject: "", message: "", honeypot: form.honeypot });
     } catch (error) {
+      console.log(error);
       setStatusMessage('Failed to send message. Please try again later.')
     } finally {
       setIsLoading(false);
