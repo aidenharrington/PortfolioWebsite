@@ -11,7 +11,7 @@ const ResumePage = () => {
         <div className="home-page-text-box">
           <p>{content.description}</p>
           <a
-            href="/files/Aiden_Harrington_Resume_C.pdf"
+            href="/files/aharrington_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="d-flex align-items-center text-decoration-none"
