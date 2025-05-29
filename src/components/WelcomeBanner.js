@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { useEffect, useRef, useState } from "react";
 
-import profileImg from "../assets/images/profile_pic_resized.jpg";
-import content from "../content/HomePageContent.json"
 import '../App.css';
+import profileImg from "../assets/images/profile_pic_resized.jpg";
+import content from "../content/HomePageContent.json";
 
 const WelcomeBanner = () => {
     const staticWelcomeText = content.welcomeSection.welcome;

@@ -1,7 +1,7 @@
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import content from "../content/ResumePageContent.json";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 const ResumePage = () => {
   return (
