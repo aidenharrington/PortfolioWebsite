@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
-import ImageAttribution from "./components/ImageAttribution";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -21,7 +20,6 @@ function App() {
         <Route path={commonContent.resumePageLink} element={<ResumePage />} />
         <Route path={commonContent.contactPageLink} element={<ContactPage />} />
       </Routes>
-      <ImageAttribution />
     </Router>
   );
 }
