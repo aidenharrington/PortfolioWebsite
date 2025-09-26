@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Aiden Harrington",
+  "name": "Aiden Harrington - Software Engineer Portfolio",
+  "description": "Software Engineer portfolio showcasing projects, experience, and professional journey",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,12 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#3b82f6",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["portfolio", "software", "engineering", "technology"]
 }

@@ -30,17 +30,41 @@ const ProjectsPage = () => {
 
       <div className="chunk chunk-first">
         <h1 className="page-title">{content.title}</h1>
-        <a
-          href={commonContent.subscribrGitHubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="d-flex align-items-center text-decoration-none"
-        >
-          {content.github}
-          <i className="bi bi-github ms-2"></i>
-        </a>
         <div className="home-page-text-box">
-          <p>{content.introParagraph}</p>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <a
+              href={commonContent.subscribrGitHubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '12px 32px',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                textDecoration: 'none',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+                border: 'none',
+                boxShadow: '0 4px 15px rgba(59, 130, 246, 0.3)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 8px 25px rgba(59, 130, 246, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.3)';
+              }}
+            >
+              <i className="bi bi-github"></i>
+              {content.github}
+            </a>
+          </div>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#e5e7eb' }}>{content.introParagraph}</p>
         </div>
         {!isMobile && (<div className="video-container">
           <iframe
@@ -67,17 +91,17 @@ const ProjectsPage = () => {
 
       <div className="chunk">
         <div className="home-page-text-box">
-          <p>{content.bodyParagraph1}</p>
-          <p>{content.bodyParagraph2}</p>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#e5e7eb', marginBottom: '1.5rem' }}>{content.bodyParagraph1}</p>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#e5e7eb' }}>{content.bodyParagraph2}</p>
         </div>
         <ScrollPrompt />
       </div>
 
       <div className="chunk">
         <div className="home-page-text-box">
-          <p>{content.bodyParagraph3}</p>
-          <p>{content.conclusionParagraph}</p>
-          <p>{content.conclusionParagraph2}</p>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#e5e7eb', marginBottom: '1.5rem' }}>{content.bodyParagraph3}</p>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#e5e7eb', marginBottom: '1.5rem' }}>{content.conclusionParagraph}</p>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#e5e7eb' }}>{content.conclusionParagraph2}</p>
         </div>
       </div>
 
