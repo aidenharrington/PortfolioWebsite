@@ -455,17 +455,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   pointer-events: none;
 }
 
-.image-attribution {
-  position: absolute;
-  bottom: 5px;
-  right: 20px;
-  font-size: 7px;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2px 5px;
-  border-radius: 3px;
-}
-
 .scroll-prompt {
   position: absolute;
   bottom: 30px;
