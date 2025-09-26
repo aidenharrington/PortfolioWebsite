@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import commonContent from "../content/CommonContent.json";
+import Logo from "./Logo";
 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../App.css';
@@ -45,6 +46,17 @@ const NavigationBar = () => {
       expanded={expanded}
       onToggle={handleToggle}>
       <Container>
+        <Navbar.Brand as={Link} to={commonContent.homePageLink} onClick={() => onUpdateActivePage(homePage)} className="d-flex align-items-center">
+          <Logo size="small" />
+          <span className="ms-2 d-none d-md-inline" style={{
+            color: '#ffffff',
+            fontSize: '1.25rem',
+            fontWeight: '600',
+            letterSpacing: '0.5px'
+          }}>
+            Aiden Harrington
+          </span>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">

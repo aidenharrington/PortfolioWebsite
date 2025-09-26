@@ -16,7 +16,6 @@ const WelcomeBanner = () => {
     const [text, setText] = useState('');
     const [index, setIndex] = useState(0);
     const [speed, setSpeed] = useState(150);
-    const [isVisible, setIsVisible] = useState(false);
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -45,11 +44,8 @@ const WelcomeBanner = () => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    setIsVisible(true);
                     setText("");
                     setIsDeleting(false);
-                } else {
-                    setIsVisible(false);
                 }
             },
             { threshold: 0.1 }
@@ -67,16 +63,43 @@ const WelcomeBanner = () => {
 
     return (
         <div ref={containerRef} className="container mt-5">
-            <div className="row align-items-center">
-                <div className="col-md-6 text-start">
-                    <div className="welcome-text-box welcome-text-mobile">
-                        <h1 className="">{staticWelcomeText}</h1>
-                        <h2 style={{ minHeight: "30px", visibility: text ? "visible" : "hidden" }}>{text || "\u00A0"}</h2>
+            <div className="row align-items-center justify-content-center">
+                <div className="col-lg-8 text-center">
+                    <div className="welcome-text-box">
+                        <h1 style={{ 
+                            fontSize: '4rem', 
+                            fontWeight: '700', 
+                            marginBottom: '1.5rem',
+                            background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text'
+                        }}>
+                            {staticWelcomeText}
+                        </h1>
+                        <h2 style={{ 
+                            minHeight: "40px", 
+                            visibility: text ? "visible" : "hidden",
+                            fontSize: '1.5rem',
+                            fontWeight: '400',
+                            color: '#e5e7eb',
+                            fontFamily: "'JetBrains Mono', monospace"
+                        }}>
+                            {text || "\u00A0"}
+                        </h2>
+                        <div style={{ 
+                            marginTop: '2rem',
+                            fontSize: '1.1rem',
+                            color: '#9ca3af',
+                            lineHeight: '1.6'
+                        }}>
+                            Software Engineer • Backend Developer • System Design
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-6 d-flex justify-content-center">
+                <div className="col-lg-4 d-flex justify-content-center mt-4 mt-lg-0">
                     <div className="profile-img-container">
-                        <img src={profileImg} alt="Profile" className="profile-img" />
+                        <img src={profileImg} alt="Aiden Harrington - Software Engineer" className="profile-img" />
                     </div>
                 </div>
             </div>

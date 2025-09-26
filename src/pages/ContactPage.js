@@ -78,94 +78,103 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="container py-4">
-      <div>
+    <div className="snap-scroll-container">
+      <div className="chunk chunk-first">
         <h1 className="page-title">{content.linksTitle}</h1>
-        <div className="social-icon">
-          <a href={commonContent.gitHubLink} target="_blank" rel="noopener noreferrer" className="text-primary">
-            <i className="bi bi-github"></i>
-          </a>
-          <a
-            href={content.linkedInLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary"
-          >
-            <i className="bi bi-linkedin"></i>
-          </a>
+        <div className="home-page-text-box">
+          <div className="social-icon" style={{ justifyContent: 'center', marginBottom: '2rem' }}>
+            <a href={commonContent.gitHubLink} target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-github"></i>
+            </a>
+            <a
+              href={content.linkedInLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-linkedin"></i>
+            </a>
+          </div>
         </div>
-        <h4 className="mb-4 mt-5">{content.contactMeTitle}</h4>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">
-              {content.nameFormPlaceholder}
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              {content.emailFormPlaceholder}
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="subject" className="form-label">
-              {content.subjectFormPlaceholder}
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="subject"
-              name="subject"
-              value={form.subject}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">
-              {content.messageFormPlaceholder}
-            </label>
-            <textarea
-              className="form-control"
-              id="message"
-              name="message"
-              rows="4"
-              value={form.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          {/* Honeypot field */}
-          <input
-            type="text"
-            name="honeypot"
-            value={form.honeypot}
-            onChange={handleChange}
-            style={{ display: "none" }}
-          />
-          <button type="submit" className="btn btn-primary mt-3" disabled={isLoading}>
-            {isLoading ? 'Sending...' : 'Send Message'}
-          </button>
-          {statusMessage && <p>{statusMessage}</p>}
+      </div>
 
-        </form>
+      <div className="chunk">
+        <div className="home-page-text-box">
+          <h4 className="mb-4" style={{ textAlign: 'center', color: '#f3f4f6', fontSize: '2rem' }}>
+            {content.contactMeTitle}
+          </h4>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">
+                {content.nameFormPlaceholder}
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                {content.emailFormPlaceholder}
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="subject" className="form-label">
+                {content.subjectFormPlaceholder}
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="subject"
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="message" className="form-label">
+                {content.messageFormPlaceholder}
+              </label>
+              <textarea
+                className="form-control"
+                id="message"
+                name="message"
+                rows="4"
+                value={form.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+            </div>
+            {/* Honeypot field */}
+            <input
+              type="text"
+              name="honeypot"
+              value={form.honeypot}
+              onChange={handleChange}
+              style={{ display: "none" }}
+            />
+            <div style={{ textAlign: 'center' }}>
+              <button type="submit" className="btn btn-primary mt-3" disabled={isLoading}>
+                {isLoading ? 'Sending...' : 'Send Message'}
+              </button>
+              {statusMessage && <p style={{ marginTop: '1rem', color: statusMessage.includes('successfully') ? '#10b981' : '#ef4444' }}>{statusMessage}</p>}
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
