@@ -80,9 +80,9 @@ const ContactPage = () => {
   return (
     <div className="snap-scroll-container">
       <div className="chunk chunk-first">
-        <h1 className="page-title">{content.linksTitle}</h1>
+        <h1 className="page-title" style={{ marginTop: '120px' }}>{content.linksTitle}</h1>
         <div className="home-page-text-box">
-          <div className="social-icon" style={{ justifyContent: 'center', marginBottom: '2rem' }}>
+          <div className="social-icon" style={{ justifyContent: 'center', marginBottom: '1rem' }}>
             <a href={commonContent.gitHubLink} target="_blank" rel="noopener noreferrer">
               <i className="bi bi-github"></i>
             </a>
@@ -94,12 +94,7 @@ const ContactPage = () => {
               <i className="bi bi-linkedin"></i>
             </a>
           </div>
-        </div>
-      </div>
-
-      <div className="chunk">
-        <div className="home-page-text-box">
-          <h4 className="mb-4" style={{ textAlign: 'center', color: '#f3f4f6', fontSize: '2rem' }}>
+          <h4 className="mb-2" style={{ textAlign: 'center', color: '#f3f4f6', fontSize: '2rem' }}>
             {content.contactMeTitle}
           </h4>
           <form onSubmit={handleSubmit}>

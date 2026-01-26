@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 import commonContent from "../content/CommonContent.json";
 import Logo from "./Logo";
 
@@ -9,17 +9,34 @@ import '../App.css';
 
 const NavigationBar = () => {
   const homePage = 'home';
-  const projectsPage = 'projects';
+  const subscribrPage = 'subscribr';
+  const aidbPage = 'aidb';
   const resumePage = 'resume';
   const contactPage = 'contact';
-  const scroll = 'scroll';
 
+  const location = useLocation();
   const [activePage, setActivePage] = useState(homePage);
   const [pageScrolled, setPageScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   const handleToggle = () => setExpanded(!expanded);
   const handleClose = () => setExpanded(false);
+
+  useEffect(() => {
+    // Update active page based on current route
+    const path = location.pathname;
+    if (path === commonContent.homePageLink) {
+      setActivePage(homePage);
+    } else if (path === commonContent.subscribrPageLink) {
+      setActivePage(subscribrPage);
+    } else if (path === commonContent.aidbPageLink) {
+      setActivePage(aidbPage);
+    } else if (path === commonContent.resumePageLink) {
+      setActivePage(resumePage);
+    } else if (path === commonContent.contactPageLink) {
+      setActivePage(contactPage);
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -30,9 +47,9 @@ const NavigationBar = () => {
       }
     }
 
-    window.addEventListener(scroll, onScroll);
+    window.addEventListener('scroll', onScroll);
 
-    return () => window.removeEventListener(scroll, onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, [])
 
   const onUpdateActivePage = (page) => {
@@ -42,7 +59,7 @@ const NavigationBar = () => {
 
   return (
     <Navbar expand="md"
-      className={`${pageScrolled ? "pageScrolled" : ""} ${expanded ? "expanded" : ""}`}
+      className={`${pageScrolled ? "scrolled" : ""} ${expanded ? "expanded" : ""}`}
       expanded={expanded}
       onToggle={handleToggle}>
       <Container>
@@ -67,13 +84,28 @@ const NavigationBar = () => {
               onClick={() => { onUpdateActivePage(homePage); handleClose(); }}>
               {commonContent.homePageTitle}
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to={commonContent.projectsPageLink}
-              className={activePage === projectsPage ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => { onUpdateActivePage(projectsPage); handleClose(); }}>
-              {commonContent.projectsPageTitle}
-            </Nav.Link>
+            <NavDropdown
+              title={commonContent.projectsPageTitle}
+              id="projects-dropdown"
+              className={`navbar-dropdown ${(activePage === subscribrPage || activePage === aidbPage) ? 'active' : ''}`}
+            >
+              <NavDropdown.Item
+                as={Link}
+                to={commonContent.subscribrPageLink}
+                className={activePage === subscribrPage ? 'active' : ''}
+                onClick={() => { onUpdateActivePage(subscribrPage); handleClose(); }}
+              >
+                Subscribr
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to={commonContent.aidbPageLink}
+                className={activePage === aidbPage ? 'active' : ''}
+                onClick={() => { onUpdateActivePage(aidbPage); handleClose(); }}
+              >
+                AiDB
+              </NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link
               as={Link}
               to={commonContent.resumePageLink}
