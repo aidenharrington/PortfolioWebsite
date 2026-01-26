@@ -17,7 +17,7 @@ const useIsMobile = () => {
   return isMobile;
 }
 
-const ProjectsPage = () => {
+const SubscribrPage = () => {
   const subscribrVideoId = "1xO1CIoY_48";
 
   const isMobile = useIsMobile();
@@ -109,4 +109,4 @@ const ProjectsPage = () => {
   )
 };
 
-export default ProjectsPage;
+export default SubscribrPage;

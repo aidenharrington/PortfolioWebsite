@@ -150,6 +150,69 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: #60a5fa !important;
 }
 
+/* Dropdown Styling */
+.navbar-dropdown .dropdown-toggle {
+  font-weight: 500;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+  padding: 8px 20px;
+  font-size: 16px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 0 4px;
+  border: none;
+  background: transparent;
+}
+
+.navbar-dropdown .dropdown-toggle:hover,
+.navbar-dropdown .dropdown-toggle:focus {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  color: #ffffff !important;
+}
+
+.navbar-dropdown.active .dropdown-toggle {
+  opacity: 1;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa !important;
+}
+
+.navbar-dropdown .dropdown-menu {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 0;
+  margin-top: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  min-width: 180px;
+}
+
+.navbar-dropdown .dropdown-item {
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.navbar-dropdown .dropdown-item:hover,
+.navbar-dropdown .dropdown-item:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  opacity: 1;
+}
+
+.navbar-dropdown .dropdown-item.active {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  opacity: 1;
+}
+
 span.navbar-text {
   display: flex;
   align-items: center;
@@ -726,6 +789,32 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 100%;
     color: #fff !important;
     opacity: 1 !important;
+  }
+
+  /* Mobile Dropdown Styling */
+  nav.navbar.expanded .navbar-dropdown .dropdown-toggle {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    color: #fff !important;
+    opacity: 1 !important;
+    text-align: center;
+  }
+
+  nav.navbar.expanded .navbar-dropdown .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    background: rgba(10, 10, 10, 0.5);
+    border: none;
+    box-shadow: none;
+  }
+
+  nav.navbar.expanded .navbar-dropdown .dropdown-item {
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
   }
 
   nav.navbar .navbar-toggler {

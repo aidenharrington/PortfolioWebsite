@@ -1,9 +1,10 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes, Navigate } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
+import SubscribrPage from "./pages/SubscribrPage";
+import AiDBPage from "./pages/AiDBPage";
 import ResumePage from "./pages/ResumePage";
 
 import commonContent from './content/CommonContent.json'
@@ -16,7 +17,9 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path={commonContent.homePageLink} element={<HomePage />} />
-        <Route path={commonContent.projectsPageLink} element={<ProjectsPage />} />
+        <Route path={commonContent.projectsPageLink} element={<Navigate to={commonContent.subscribrPageLink} replace />} />
+        <Route path={commonContent.subscribrPageLink} element={<SubscribrPage />} />
+        <Route path={commonContent.aidbPageLink} element={<AiDBPage />} />
         <Route path={commonContent.resumePageLink} element={<ResumePage />} />
         <Route path={commonContent.contactPageLink} element={<ContactPage />} />
       </Routes>
