@@ -2,6 +2,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import content from "../content/ResumePageContent.json";
+import commonContent from "../content/CommonContent.json";
 
 const ResumePage = () => {
   return (
@@ -14,7 +15,7 @@ const ResumePage = () => {
           </p>
           <div style={{ textAlign: 'center' }}>
             <a
-              href="/files/aharrington_resume.pdf"
+              href={commonContent.resumeFileLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"

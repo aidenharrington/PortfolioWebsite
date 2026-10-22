@@ -7,6 +7,14 @@ import Logo from "./Logo";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../App.css';
 
+const experiencePages = [
+  { id: 'arbutus', title: 'Arbutus West', link: commonContent.arbutusPageLink },
+  { id: 'benevity', title: 'Benevity', link: commonContent.benevityPageLink },
+  { id: 'paypal', title: 'PayPal', link: commonContent.paypalPageLink },
+  { id: 'knoldus', title: 'Knoldus', link: commonContent.knoldusPageLink },
+  { id: 'mitacs', title: 'Mitacs', link: commonContent.mitacsPageLink },
+];
+
 const NavigationBar = () => {
   const homePage = 'home';
   const subscribrPage = 'subscribr';
@@ -31,6 +39,8 @@ const NavigationBar = () => {
       setActivePage(subscribrPage);
     } else if (path === commonContent.aidbPageLink) {
       setActivePage(aidbPage);
+    } else if (experiencePages.some((page) => page.link === path)) {
+      setActivePage(experiencePages.find((page) => page.link === path).id);
     } else if (path === commonContent.resumePageLink) {
       setActivePage(resumePage);
     } else if (path === commonContent.contactPageLink) {
@@ -84,6 +94,23 @@ const NavigationBar = () => {
               onClick={() => { onUpdateActivePage(homePage); handleClose(); }}>
               {commonContent.homePageTitle}
             </Nav.Link>
+            <NavDropdown
+              title={commonContent.experiencePageTitle}
+              id="experience-dropdown"
+              className={`navbar-dropdown ${experiencePages.some((page) => page.id === activePage) ? 'active' : ''}`}
+            >
+              {experiencePages.map((page) => (
+                <NavDropdown.Item
+                  key={page.id}
+                  as={Link}
+                  to={page.link}
+                  className={activePage === page.id ? 'active' : ''}
+                  onClick={() => { onUpdateActivePage(page.id); handleClose(); }}
+                >
+                  {page.title}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
             <NavDropdown
               title={commonContent.projectsPageTitle}
               id="projects-dropdown"
