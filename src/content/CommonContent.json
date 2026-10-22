@@ -2,6 +2,7 @@
     "websiteTitle": "Aiden's Portfolio",
     "homePageTitle": "Home",
     "projectsPageTitle": "Projects",
+    "experiencePageTitle": "Experience",
     "resumePageTitle": "Resume",
     "contactPageTitle": "Contact",
 
@@ -9,8 +10,15 @@
     "projectsPageLink": "/projects",
     "subscribrPageLink": "/projects/subscribr",
     "aidbPageLink": "/projects/aidb",
+    "experiencePageLink": "/experience",
+    "arbutusPageLink": "/experience/arbutus",
+    "benevityPageLink": "/experience/benevity",
+    "paypalPageLink": "/experience/paypal",
+    "knoldusPageLink": "/experience/knoldus",
+    "mitacsPageLink": "/experience/mitacs",
     "resumePageLink": "/resume",
     "contactPageLink": "/contact",
+    "resumeFileLink": "/files/aharrington_resume_26_5.pdf",
 
     "gitHubLink": "https://github.com/aidenharrington",
     "linkedInLink": "https://www.linkedin.com/in/aidenharrington/",
